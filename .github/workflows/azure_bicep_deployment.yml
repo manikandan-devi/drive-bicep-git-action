@@ -22,8 +22,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: action/checkout@v2
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: 'Azure Login'
+      - name: Azure Login
         uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_SPN_CREDENTIAL }}
