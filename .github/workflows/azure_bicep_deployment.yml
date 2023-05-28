@@ -34,6 +34,18 @@ jobs:
         working-directory: '${{github.workspace}}/src/bicep'
         run:
           az deployment group create -g azbicepresourcegroup -f storage_account_test.bicep
+  azure_build4:
+    runs-on: ubuntu-latest
+    needs: 
+        - azure_build
+        - build-image
+        - Publist-build-image
+        - build-image12
+    steps:
+      - name: first step on build image
+      run: |
+        echo "fist steps"
+
 
     
   
