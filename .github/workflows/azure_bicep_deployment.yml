@@ -31,7 +31,7 @@ jobs:
       - name: az bicep deploy
         working-directory: '${{github.workspace}}/src/bicep'
         run: 
-          az deployment group create -g azbicepresourcegroup -f storage_account.bicep
+          az deployment group what-if --no-pretty-print --only-show-errors -g azbicepresourcegroup -f storage_account.bicep
   deploy:
     name: 'bicep deploy'
     needs: [build]
