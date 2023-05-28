@@ -25,7 +25,7 @@ jobs:
       - name: az bicep deploy
         working-directory: '${{github.workspace}}/src/bicep'
         run:
-          az deployment group create -g azbicepresourcegroup -f storage_account.bicep
+          az deployment group create -g azbicepresourcegroup -f storage_account_test.bicep
 
     
   
