@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -34,8 +35,8 @@ jobs:
           az deployment group what-if --only-show-errors -g azbicepresourcegroup -f storage_account_test.bicep
   deploy:
     name: 'bicep deploy'
-    needs: [build]
-    environment: dev
+    #needs: [build]
+    #environment: dev
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
