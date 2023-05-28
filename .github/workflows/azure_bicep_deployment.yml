@@ -18,7 +18,7 @@ jobs:
   matrix_name:
   strategy:
   matrix:
-    os: [ubuntu-latest,ubuntu-latest]
+    os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
   build:
     name: 'bicep-deploy19999999999'   
