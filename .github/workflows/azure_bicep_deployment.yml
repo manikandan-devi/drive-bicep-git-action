@@ -11,16 +11,17 @@ on:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  #workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  matrix_name:
+  strategy:
+  matrix:
+    os: [ubuntu-latest,ubuntu-latest]
+    runs-on: ${{ matrix.os }}
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    name: 'bicep-deploy1'   
     steps:
       - uses: actions/checkout@v2
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -33,11 +34,10 @@ jobs:
         run: 
           az deployment group what-if --only-show-errors -g azbicepresourcegroup -f storage_account_test.bicep
   deploy:
-    name: 'bicep deploy'
-    needs: [build]
-    environment: dev
+    name: 'bicep deploy11'
+    #needs: [build]
+    #environment: dev
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
