@@ -16,12 +16,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   matrix_name:
-  strategy:
-  matrix:
-    os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
-  build:
-    name: 'bicep-deploy19999999999'   
+     strategy:
+       matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}   
     steps:
       - uses: actions/checkout@v2
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
