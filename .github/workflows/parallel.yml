@@ -14,4 +14,3 @@ jobs:
       - name: first step on build image
         run: |
           echo "fist steps"
-
