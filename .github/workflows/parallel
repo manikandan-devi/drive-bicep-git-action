@@ -34,7 +34,7 @@ jobs:
         run: 
           az deployment group what-if --only-show-errors -g azbicepresourcegroup -f storage_account_test.bicep
   deploy:
-    name: 'bicep deploy'
+    name: 'bicep deploy11'
     #needs: [build]
     #environment: dev
     # The type of runner that the job will run on
