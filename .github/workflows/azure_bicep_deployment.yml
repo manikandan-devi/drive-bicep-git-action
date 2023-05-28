@@ -2,13 +2,13 @@ name: jobs parallel execution
 on:
   workflow_dispatch:
 jobs:
-  build-image:
+  mongo-image:
     runs-on: ubuntu-latest
     steps:
       - name: first step on build image
         run: |
           echo "fist steps"
-  build-image12:
+  kafka-image12:
     runs-on: ubuntu-latest
     steps:
     - name: first step on build image
@@ -16,8 +16,6 @@ jobs:
         echo "fist steps"
   Publist-build-image:
     runs-on: ubuntu-latest
-    needs: 
-      - azure_build
     steps:
       - name: first step on build image
         run: |
@@ -34,17 +32,16 @@ jobs:
         working-directory: '${{github.workspace}}/src/bicep'
         run:
           az deployment group create -g azbicepresourcegroup -f storage_account_test.bicep
-  azure_build4:
+  init-infra:
     runs-on: ubuntu-latest
     needs: 
-        - azure_build
-        - build-image
-        - Publist-build-image
-        - build-image12
+        - mongo-image
+        - kafka-image12
     steps:
       - name: first step on build image
         run: |
           echo "fist steps"
+          
 
 
     
