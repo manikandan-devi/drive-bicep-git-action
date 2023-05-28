@@ -43,8 +43,8 @@ jobs:
         - build-image12
     steps:
       - name: first step on build image
-      run: |
-        echo "fist steps"
+        run: |
+          echo "fist steps"
 
 
     
