@@ -10,6 +10,8 @@ jobs:
           echo "fist steps"
   Publist-build-image:
     runs-on: ubuntu-latest
+    needs: 
+      - azure_build
     steps:
       - name: first step on build image
         run: |
