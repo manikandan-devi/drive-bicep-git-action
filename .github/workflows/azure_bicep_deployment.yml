@@ -8,6 +8,12 @@ jobs:
       - name: first step on build image
         run: |
           echo "fist steps"
+  build-image1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: first step on build image
+      run: |
+        echo "fist steps"
   Publist-build-image:
     runs-on: ubuntu-latest
     needs: 
