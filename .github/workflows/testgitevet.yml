@@ -1,0 +1,15 @@
+name: Get Git Event Number
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  get_git_event_number:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Display Git Event Number
+        run: echo "Git Event Number: ${{ github.event_number }}"
