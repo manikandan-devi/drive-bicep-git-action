@@ -9,7 +9,7 @@ jobs:
   get_git_event_number:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
+    - name: Print Event Number
+      run: |
+          echo "Event Number: ${{ github.event.number }}"
 
