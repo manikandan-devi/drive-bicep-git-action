@@ -12,6 +12,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       
-      - name: Print Event Number
-        run: echo "Event Number: ${{ github.event.number }}"
 
