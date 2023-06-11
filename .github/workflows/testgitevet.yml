@@ -3,7 +3,8 @@ on:
   push:
     branches:
       - main
-
+env:
+  PR_NUMBER: ${{ github.event.number }}
 jobs:
   get_git_event_number:
     runs-on: ubuntu-latest
